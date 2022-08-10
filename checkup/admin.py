@@ -1,0 +1,10 @@
+from django.contrib import admin
+from . import models
+
+# Register your models here.
+admin.site.register(models.Patient)
+admin.site.register(models.Vitals)
+admin.site.register(models.PatientVisit)
+# admin.site.register(models.Vitals)
+# admin.site.register(models.Vitals)
+
