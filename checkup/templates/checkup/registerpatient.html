@@ -7,103 +7,67 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-
-        <a class="navbar-brand" href="#">Songa</a>
-      
-      
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      
-      
-          <span class="navbar-toggler-icon"></span>
-      
-      
-        </button>
-      
-      
-        <div class="collapse navbar-collapse" id="navbarNav">
-      
-      
-          <ul class="navbar-nav">
-      
-      
-            <li class="nav-item active">
-      
-      
-              <a class="nav-link" href="{% url 'register_patient'  %}">Registeration<span class="sr-only">(current)</span></a>
-      
-      
-            </li>
-      
-      
-            <li class="nav-item">
-      
-      
-              <a class="nav-link" href="{% url 'visitors' %}">Visit Us<span class="sr-only">(current)</span></a>
-      
-      
-            </li>
-      
-      
-            <li class="nav-item">
-      
-      
-              <a class="nav-link" href="{% url 'vital_checkup'%}">Vitals</a>
-      
-      
-            </li>
-      
-      
-          </ul>
-      
-      
-        </div>
-      
-      
-      </nav>
-      <div class="card"   style="width: 34rem;margin-left: 450px;margin-top: 45px;">
+<body style="background-color: #125052;">
+  <div class="Home">
+    <nav> 
+      <ul style="list-style-type: none; float:right; padding-right:95px;display:inline-flex;padding-left: 56px;margin-top: 20px;">
+        <li><a href="{% url 'register_patient'  %}"style="color:#F8BF87  ;padding-left:653px;margin-right: 45px;" >Register</a></li>
+        <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color: white;">Visit</a></li>
+        <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;">Checkup</a></li>
+      </ul>
+    </nav>
+  </div>
+ 
+  <!-- <div class="Emoty" > -->
+    <!-- <div class="Try"> -->
+    <img src="/checkup/static/image-removebg-preview.png" >
+<!-- </div> -->
+  <!-- </div> -->
+      <div class="card"   style="width: 34rem;margin: auto;float: none;margin-top:200px;backdrop-filter:8px;background: rgba(255, 255, 255, 0.2);";> 
         <div class="card-body">
       <div class="form-row">
         <!-- <h1>Form</h1> -->
         <form method="post">
             {% csrf_token %}
-	    <div class="col">
-        <label for="firstname">Firstname</label>
-                <!-- {{ register.firstname }} -->
-                <input type="firstname" class="form-control" placeholder="Enter your firstname">
+
+            <div class="row gy-2 gx-3 align-items-center" style="margin: auto;float: none;margin-left: 8.2px;">
+     <div class="col ">
+        <label for="firstname" style="color: white;">Firstname</label>
+                <input type="firstname" class="form-control" placeholder="Enter your firstname" style="width: 219px;  border-radius: 35px; ">
 	    </div>
       <div class=" col">
-        <label for="lastname">Lastname</label>
-                <!-- {{ register.firstname }} -->
-                <input type="firstname" class="form-control" placeholder="Enter your lastname">
+        <label for="lastname"  style="color: white;">Lastname</label>
+                <input type="lastname" class="form-control" placeholder="Enter your lastname" style="width: 219px; border-radius: 35px; ">
 	    </div>
-	    <!-- <div class="form-group">
-            {{ register.lastname }}
-	    </div> -->
-      <div class="col">
-        <label for="date_of_birth">Date of birth</label>
-        <input type="date_of_birth" class="form-control"  placeholder="date of birth">
-      </div>
-      <div class="col">
-        <label for="age">Age</label>
-        <input type="age" class="form-control"  placeholder="Your age">
-      </div>
-      <div class="col">
-        <label for="phone_number">Phone Number</label>
-        <input type="phone_number" class="form-control"  placeholder="Please enter your phone number">
-      </div>
-      <div class="col">
-        <label for="registrar">Registrar</label>
-        <input type="register" class="form-control"  placeholder="Your registrar">
-      </div>
-
-
-
-	    <div class="form-group">
-                <input class="btn btn-success" type="submit" value="Submit">
+    </div>
 	    </div>
+      <!-- <div class="row gy-2 gx-3 align-items-center" style="margin-top:23px"> -->
+ 
+      <div class="col align-items-center" >
+        <label for="date_of_birth"  style="color: white;">Date of birth</label>
+        <input type="date_of_birth" class="form-control"  placeholder="date of birth" style=" border-radius: 35px; ">
+      </div>
+      <div class="col align-items-center">
+        <label for="age"  style="color: white;">Age</label>
+        <input type="age" class="form-control"  placeholder="Your age" style=" border-radius: 35px; ">
+      </div>
+   <!-- </div> -->
+   <!-- <div class="row gy-2 gx-3 align-items-center" style="margin-top:23px"> -->
+
+      <div class="col align-items-center">
+        <label for="phone_number"  style="color: white;">Phone Number</label>
+        <input type="phone_number" class="form-control"  placeholder="Your phone number" style=" border-radius: 35px; ">
+      </div>
+      <div class="col align-items-center">
+        <label for="registrar"  style="color: white;">Registrar</label>
+        <input type="register" class="form-control"  placeholder="Your registrar" style=" border-radius: 35px; ">
+      </div>
+      <!-- </div> -->
+
+
+
+	    
+            <button style="margin-top:25px ;margin-left: 197px;background-color:#F8BF87  ;border-radius: 27px;width: 150px;">Submit</button>
         </form>
     </div>
   </div>

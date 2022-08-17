@@ -8,19 +8,19 @@
     <title>Document</title>
 </head>
 <body class="p-3 mb-2 bg-warning text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
 
 
         <a class="navbar-brand" href="#">Songa</a>
       
       
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       
       
           <span class="navbar-toggler-icon"></span>
       
       
-        </button>
+        </button> -->
       
       
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -71,16 +71,6 @@
         <button class="btn btn-primary">Submit</button>
         </div> 
 </form>
-    {% for i in shamim%}
-    
-<li id="Last">   
-           {{%if i==shamim[-1]%}}
-           {{(100/i.height)^2 /i.weight}}
-           {{% else %}}{{i.firstname}}
-           {{%endif%}}
-
-    {% endfor%}
-  </li> 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
