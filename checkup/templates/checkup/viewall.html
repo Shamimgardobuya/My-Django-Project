@@ -1,0 +1,69 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#D2E3DF;">
+    
+    <div class="All">
+        <nav> 
+          <ul style="list-style-type: none; float:right; padding-right:95px;display:inline-flex;padding-left: 56px;margin-top: 20px;">
+            <!-- <li><a href="{url 'home_page'}" style="color: white; margin-right: -145px;text-align: right;">Home</a></li> -->
+            <li><a href="{% url 'register_patient'  %}"style="color:white  ;padding-left:653px;margin-right: 45px;text-decoration: none;" >Register</a></li>
+            <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color: white;text-decoration: none;">Visit</a></li>
+            <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;text-decoration: none;">Checkup</a></li>
+            <li><a href="{% url  'all'%}" style="color:#F8BF87;text-decoration: none;">All Patients</a></li>
+          </ul>
+        </nav>
+      </div>
+    <h1>   <form class="form-inline my-2 my-lg-0" method="GET">
+        <input class="form-control mr-sm-2" style="width: 140px;border:none !important;height: 40px;" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form></h1>
+            <table    style="border: 1px solid black;margin-left: 229px;"  >
+                   <thead>
+
+                    <tr>
+
+                        <th scope="col" style="color: white;height:50px;font-size:20px">Patient Name </th>
+                       
+
+                     </tr>
+                    
+                </thead>
+ 
+                <tbody>
+                    <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                   
+                    </tr>
+                    {% for i in allpatients%}
+                    <tr>
+                        
+                        <td scope="row">{{i.firstname}}</td>
+                        <td scope="row">{{i.lastname}}</td>
+                        <td scope="row">{{i.gender}}</td>
+                        <td scope="row">{{i.age}}</td>
+
+                        
+                    </tr>
+                    {%endfor%}
+                    
+
+                </tbody>
+
+            </table>
+           
+            <!-- <li></li> -->
+
+        <!-- </ul> -->
+    <!-- </div> -->
+</body>
+</html>

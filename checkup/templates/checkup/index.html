@@ -7,82 +7,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styling.css">
     <title>Document</title>
-    <!-- <style>
-        nav{
-            background-color: blue;
-        }
-    </style> -->
    
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<body style="background-image:url(/static/images/hosp.jpg);">
+  <div class="LandingPage">
+    <nav> 
+      <ul style="list-style-type: none; float:right; padding-right:95px;display:inline-flex;padding-left: 56px;margin-top: 20px;">
+        <li><a href="{% url 'register_patient'  %}"style="color:white  ;padding-left:653px;margin-right: 45px;" >Register</a></li>
+        <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color: white;">Visit</a></li>
+        <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;">Checkup</a></li>
+        <li><a href="{% url  'all'%}" style="color:white;text-decoration: none;">All Patients</a></li>
 
-
-        <a class="navbar-brand" href="#">Songa</a>
-      
-      
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      
-      
-          <span class="navbar-toggler-icon"></span>
-      
-      
-        </button>
-      
-      
-        <div class="collapse navbar-collapse" id="navbarNav">
-      
-      
-          <ul class="navbar-nav">
-      
-      
-            <li class="nav-item active">
-      
-      
-              <a class="nav-link" href="{% url 'register_patient'  %}">Registeration<span class="sr-only">(current)</span></a>
-      
-      
-            </li>
-      
-      
-            <li class="nav-item">
-      
-      
-              <a class="nav-link" href="{% url 'visitors' %}">Visit Us<span class="sr-only">(current)</span></a>
-      
-      
-            </li>
-      
-      
-            <li class="nav-item">
-      
-      
-              <a class="nav-link" href="{% url 'vital_checkup'%}">Vitals</a>
-      
-      
-            </li>
-      
-      
-          </ul>
-      
-      
-        </div>
+      </ul>
     </nav>
-           
-    <!-- <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="Me">Songa</a>
-
-     <nav class="navbar navbar-dark bg-primary">
-     <a class="navbar-brand" href="{%  url 'register_patient'  %}">Register</a>
-     <nav class="navbar navbar-dark bg-primary">
-          <a class="navbar-brand" href="{%  url 'visitors'  %}">Visit Us</a>
-           
-            <nav class="navbar navbar-dark bg-primary">
-                <a class="navbar-brand" href="{%  url 'vital_checkup'  %}">Your Vitals</a>
-               -->
-                <!-- </nav> -->
-            
-
+  </div>
+      
+      
+         
+    
 
 
 

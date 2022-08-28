@@ -2,7 +2,7 @@ from dataclasses import field
 from http.client import HTTPResponse
 from django.shortcuts import render,redirect
 
-from .models import Vitals
+from .models import Patient, Vitals
 
 # from checkup import visit, vitals
 from . import forms
@@ -12,19 +12,23 @@ def home_page(request):
     return render(request,'checkup/index.html')
 
 def registering_patient(request):
-    if request.method=='POST':
-
-      form=forms.PatientRegistrationForm(request.POST)  #name of file #creating an acceptance of the whole form
-      if form .is_valid():
-        form.save()
-        # data = ['Your registration is completed successfully.<br />', 'Name:', field, '<br />', 'Email:', field, '<br />', 'Username:', field]
+  if request.method=='POST':
+    form=forms.PatientRegistrationForm(request.POST)  #name of file #creating an acceptance of the whole form
+    if form .is_valid():
+      form.save()
+      # data = ['Your registration is completed successfully.<br />', 'Name:', field, '<br />', 'Email:', field, '<br />', 'Username:', field]
       return redirect('home_page')
-
     else:
-           form=forms.PatientRegistrationForm()
-           return render(request,'checkup/registerpatient.html',{
-        "register":form
-           })
+      print(form.errors)
+      return render (request,'checkup/registerpatient.html',{"register":form
+    })
+
+
+  else:
+    form=forms.PatientRegistrationForm()
+    return render(request,'checkup/registerpatient.html',{
+"register":form
+    })
 
 def registerVitals(request):
   shamim=Vitals.objects.all()
@@ -39,7 +43,7 @@ def registerVitals(request):
     return render(request,'checkup/vitals.html',{
       "your_vitals":vital,'shamim':shamim
     })
-  
+    
 
 def visit_register(request):
   if request.method=='POST':
@@ -63,5 +67,11 @@ def visit_register(request):
 #   return render(request,'checkup/calculate.html',{
 #     "values":value
 #   })
+
+def all_patients(request):
+  patients_all=Patient.objects.all()
+  return render(request,'checkup/viewall.html',{
+    'allpatients':patients_all
+  })
  
      

@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,63 +12,67 @@
   <div class="Home">
     <nav> 
       <ul style="list-style-type: none; float:right; padding-right:95px;display:inline-flex;padding-left: 56px;margin-top: 20px;">
+        <!-- <li><a href="{url 'home_page'}" style="color: white; margin-right: -145px;text-align: right;">Home</a></li> -->
         <li><a href="{% url 'register_patient'  %}"style="color:#F8BF87  ;padding-left:653px;margin-right: 45px;" >Register</a></li>
         <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color: white;">Visit</a></li>
         <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;">Checkup</a></li>
+        <li><a href="{% url  'all'%}" style="color:white;text-decoration: none;">All Patients</a></li>
+         
       </ul>
     </nav>
   </div>
- 
-  <!-- <div class="Emoty" > -->
-    <!-- <div class="Try"> -->
-    <img src="/checkup/static/image-removebg-preview.png" >
-<!-- </div> -->
-  <!-- </div> -->
-      <div class="card"   style="width: 34rem;margin: auto;float: none;margin-top:200px;backdrop-filter:8px;background: rgba(255, 255, 255, 0.2);";> 
-        <div class="card-body">
-      <div class="form-row">
-        <!-- <h1>Form</h1> -->
-        <form method="post">
-            {% csrf_token %}
+  
+  <img src="/static/images/docu.png"  class="img-fluid" style="width: 400px;height:400px;float: right;margin-right: 45px;border: solid 45px #F8BF87 ;border-radius: 140px;">
 
-            <div class="row gy-2 gx-3 align-items-center" style="margin: auto;float: none;margin-left: 8.2px;">
+  
+ 
+
+      <div class="card"   style="width: 34rem;height:36rem;margin: auto;float: none;margin-top:-200px;backdrop-filter:8px;background: rgba(255, 255, 255, 0.2);margin-left: 256px;"> 
+        <div class="card-body" style="height:28rem ;">
+    <form method="POST">
+            {% csrf_token %}
+      <div class="form-row">
+          <div class="row gy-2 gx-3 align-items-center" style="margin: auto;float: none;margin-left: 8.2px;">
      <div class="col ">
-        <label for="firstname" style="color: white;">Firstname</label>
-                <input type="firstname" class="form-control" placeholder="Enter your firstname" style="width: 219px;  border-radius: 35px; ">
+        <label for="firstname" style="color: white;" >Firstname</label>
+        {{register.firstname}} 
 	    </div>
       <div class=" col">
         <label for="lastname"  style="color: white;">Lastname</label>
-                <input type="lastname" class="form-control" placeholder="Enter your lastname" style="width: 219px; border-radius: 35px; ">
+        {{register.lastname}} 
 	    </div>
     </div>
 	    </div>
-      <!-- <div class="row gy-2 gx-3 align-items-center" style="margin-top:23px"> -->
  
       <div class="col align-items-center" >
         <label for="date_of_birth"  style="color: white;">Date of birth</label>
-        <input type="date_of_birth" class="form-control"  placeholder="date of birth" style=" border-radius: 35px; ">
+        {{register.date_of_birth}}
       </div>
       <div class="col align-items-center">
         <label for="age"  style="color: white;">Age</label>
-        <input type="age" class="form-control"  placeholder="Your age" style=" border-radius: 35px; ">
+        {{register.age}}
       </div>
-   <!-- </div> -->
-   <!-- <div class="row gy-2 gx-3 align-items-center" style="margin-top:23px"> -->
+  
 
       <div class="col align-items-center">
         <label for="phone_number"  style="color: white;">Phone Number</label>
-        <input type="phone_number" class="form-control"  placeholder="Your phone number" style=" border-radius: 35px; ">
+        {{register.phone_number}}
+      </div>
+      <div class="col align-items-center">
+        <label for="registrar"  style="color: white;">Date of registeration</label>
+        {{register.date_of_registeration}}
+
       </div>
       <div class="col align-items-center">
         <label for="registrar"  style="color: white;">Registrar</label>
-        <input type="register" class="form-control"  placeholder="Your registrar" style=" border-radius: 35px; ">
+        {{register.registrar}}
+
       </div>
-      <!-- </div> -->
-
-
-
-	    
-            <button style="margin-top:25px ;margin-left: 197px;background-color:#F8BF87  ;border-radius: 27px;width: 150px;">Submit</button>
+      <div class="col align-items-center">
+        <label for="gender"  style="color: white;">Gender</label>
+        {{register.gender}}
+      </div>   
+            <button type="submit" style="margin-top:25px ;margin-left: 176px;background-color:#F8BF87  ;border-radius: 27px;width: 150px;">Submit</button>
         </form>
     </div>
   </div>

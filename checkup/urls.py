@@ -9,5 +9,5 @@ urlpatterns=[
     path('register/',views.registering_patient,name='register_patient'),
     path('vital/',views.registerVitals,name='vital_checkup') ,
     path('visit/',views.visit_register,name='visitors'),
-    # path('val/',views.my_values,name='valueing')
+    path('all/',views.all_patients,name='all')
 ]
