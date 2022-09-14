@@ -24,7 +24,7 @@
         <input class="form-control mr-sm-2" style="width: 140px;border:none !important;height: 40px;" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form></h1>
-            <table    style="border: 1px solid black;margin-left: 229px;"  >
+            <table    style="border: 1px solid black;height: 550px;width: 550px;margin: 0% 0% 0% 29%;"  >
                    <thead>
 
                     <tr>
@@ -38,19 +38,19 @@
  
                 <tbody>
                     <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Gender</th>
-                    <th>Age</th>
+                    <th style="border: 2px black ;background-color:rgb(73, 107, 107);height:15%;">First Name</th>
+                    <th style="border: 2px black ;background-color:rgb(73, 107, 107);height:15%;"  >Last Name</th>
+                    <th   style="border: 2px black ;background-color:rgb(73, 107, 107);height:15%;">Gender</th>
+                    <th  style="border: 2px black ;background-color:rgb(73, 107, 107);height:15%;">Age</th>
                    
                     </tr>
                     {% for i in allpatients%}
                     <tr>
                         
-                        <td scope="row">{{i.firstname}}</td>
-                        <td scope="row">{{i.lastname}}</td>
-                        <td scope="row">{{i.gender}}</td>
-                        <td scope="row">{{i.age}}</td>
+                        <td scope="row" style="border: 2px black ;background-color:aqua;height:15%;">{{i.firstname}}</td>
+                        <td class="card"  scope="row" style="border: 2px black ;background-color:aqua;height:15%;" >{{i.lastname}}</td>
+                        <td class="card" scope="row" style="border: 2px black ;background-color:aqua;height:15%;">{{i.gender}}</td>
+                        <td class="card"scope="row" style="border: 2px black ;background-color:aqua;height:15%;">{{i.age}}</td>
 
                         
                     </tr>
