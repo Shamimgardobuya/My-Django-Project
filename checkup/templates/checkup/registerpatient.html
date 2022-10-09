@@ -9,19 +9,16 @@
     <title>Document</title>
 </head>
 <body style="background-color: #125052;">
-  <div class="Home">
-    <nav> 
+<nav> 
       <ul style="list-style-type: none; float:right; padding-right:95px;display:inline-flex;padding-left: 56px;margin-top: 20px;">
         <!-- <li><a href="{url 'home_page'}" style="color: white; margin-right: -145px;text-align: right;">Home</a></li> -->
         <li><a href="{% url 'register_patient'  %}"style="color:#F8BF87  ;padding-left:653px;margin-right: 45px;" >Register</a></li>
         <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color: white;">Visit</a></li>
         <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;">Checkup</a></li>
         <li><a href="{% url  'all'%}" style="color:white;text-decoration: none;">All Patients</a></li>
-        <li><a href="{% url loging_in %}" style="color:white;text-decoration: none"></a></li>
          
       </ul>
     </nav>
-  </div>
   
   <img src="/static/images/docu.png"  class="img-fluid" style="width: 400px;height:400px;float: right;margin-right: 45px;border: solid 45px #F8BF87 ;border-radius: 140px;">
 

@@ -13,8 +13,8 @@ class Patient(models.Model):
     lastname=models.CharField(max_length=34)
     date_of_birth=models.DateField()
     gender=(
-        ('M','Male'),
-        ('F','Female')
+        ('Male','Male'),
+        ('Female','Female')
     )
     gender=models.CharField(choices=gender,max_length=6,null=True)
     age=models.SmallIntegerField()
@@ -47,13 +47,13 @@ class PatientVisit(models.Model):
     patient_name=models.ForeignKey(Patient,on_delete=models.CASCADE,null=True)
     visit_Date=models.DateTimeField(default=datetime.now)
     gen_health=(
-        ('g','Good'),
-        ('p','Poor')
+        ('Good','Good'),
+        ('Poor','Poor')
     )
     general_health=models.CharField(choices=gen_health,null=True,max_length=4)
     choicing=(
-        ('y','Yes'),
-        ('n','No')
+        ('yes','Yes'),
+        ('No','No')
     ) 
     Have_you_ever_been_on_diet=models.CharField(max_length=15,null=True,choices=choicing)
     comments=models.TextField()

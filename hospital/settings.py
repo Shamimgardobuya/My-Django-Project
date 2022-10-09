@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
-"""
+"""                                                                                                                                                                                                                                                                                                         
 
 from pathlib import Path
 import os
@@ -138,4 +138,6 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'checkup/static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "login"
+LOGIN_REDIRECT_URL = 'home_page'
+

@@ -52,7 +52,7 @@ class VisitRegistration(forms.ModelForm):
            "visit_Date": forms.TextInput(attrs={ 'class': "form-control"}),
           
             "Have_you_ever_been_on_diet":forms.TextInput(attrs={'class':"form-control"}),
-            'general_health': forms.TextInput(attrs={ 'class': "form-control"}),
+            'general_health': forms.Select(attrs={ 'class': "form-control"}),
             'comments':forms.Textarea(attrs={ 'class': "form-control"}),
 
         }

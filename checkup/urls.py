@@ -9,5 +9,8 @@ urlpatterns=[
     path('register/',views.registering_patient,name='register_patient'),
     path('vital/',views.registerVitals,name='vital_checkup') ,
     path('visit/',views.visit_register,name='visitors'),
-    path('all/',views.all_patients,name='all')
+    path('all/',views.all_patients,name='all'),
+    path("all_visits/",views.visit,name="all_visits"),
+    path('dash/', views.patient_dashboard, name='dashboard_with_pivot'),
+    path('data/',views.pivot_data, name='pivot_data'),
 ]

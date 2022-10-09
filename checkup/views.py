@@ -1,12 +1,25 @@
+from django.http import JsonResponse
+from django.core import serializers
 from dataclasses import field
 from http.client import HTTPResponse
 from django.shortcuts import render,redirect
 
-from .models import Patient, Vitals
+from .models import Patient,PatientVisit,Vitals
 
 # from checkup import visit, vitals
 from . import forms
 
+def patient_dashboard(request):
+    return render(request,"checkup/dashboard_.html",{})
+
+def pivot_data(request):
+    dataset = Patient.objects.all()
+    data = serializers.serialize('json', dataset)
+    return JsonResponse(data, safe=False)
+
+def visit(request):
+  all_visits=PatientVisit.objects.all()
+  return render (request,"checkup/all_visits.html",{"visits":all_visits})
 
 def home_page(request):
     return render(request,'checkup/index.html')
