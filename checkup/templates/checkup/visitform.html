@@ -1,6 +1,7 @@
 {%load static%}
-
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +21,8 @@
         <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color:#F8BF87; ">Visit</a></li>
         <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;">Checkup</a></li>
         <li><a href="{% url  'all'%}" style="color:white;text-decoration: none;">All Patients</a></li>
-    
+        <li><a href="{% url 'dashboard'%}"  style="color:white;text-decoration: none;margin-right: -30px;padding-left: 23px;"> Dashboard</a></li> 
+
 
       </ul>
     </nav>
@@ -98,7 +100,7 @@
       {%csrf_token%}
       {{visit_me.as_p}} -->
       
-  </form>
+  <!-- </form> -->
 
 
     

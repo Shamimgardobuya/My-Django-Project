@@ -3,6 +3,8 @@ from django.core import serializers
 from dataclasses import field
 from http.client import HTTPResponse
 from django.shortcuts import render,redirect
+from django.views.generic.base import View
+
 
 from .models import Patient,PatientVisit,Vitals
 
@@ -13,7 +15,7 @@ def patient_dashboard(request):
     return render(request,"checkup/dashboard_.html",{})
 
 def pivot_data(request):
-    dataset = Patient.objects.all()
+    dataset = PatientVisit.objects.all()
     data = serializers.serialize('json', dataset)
     return JsonResponse(data, safe=False)
 
@@ -70,6 +72,15 @@ def visit_register(request):
       'visit_me':visit_1      #storing the object
     })
 
+
+# @property
+# def calc_bmi(self):
+#         into_meter=100/self.height
+#         bmi=(into_meter^2)/self.weight
+#         # bmi=44
+#         return bmi
+    
+
 # def calculating_bmi(height,weight):
 #       z=height*height
 #       w=weight/z
@@ -87,4 +98,18 @@ def all_patients(request):
     'allpatients':patients_all
   })
  
+
+class SearchPatient(View):
+    model = Patient
+    template_name = 'checkup/viewall.html'
+
+    def get(self,request):
+        patients=Patient.objects.all()
+        patient_found=request.GET.get('customer_found',None)     #request takes form as customer_found 
+        if patient_found:
+            result=Patient.objects.filter(first_name__contains=patient_found)    #filter from database and assign it tothe request 
+            context={'Customers':result}
+            return render(request, self.template_name,context)   #return result
+        context={'Customers':patients}
+        return render(request, self.template_name,context)                                  
      

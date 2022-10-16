@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +18,14 @@
           <li><a href="{% url 'visitors' %}" style="margin-right: 45px;color: white;">Visit</a></li>
           <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color:#F8BF87 ;">Checkup</a></li>
           <li><a href="{% url  'all'%}" style="color:white;text-decoration: none;">All Patients</a></li>
+          <li><a href="{% url 'dashboard'%}"  style="color:white;text-decoration: none;margin-right: -30px;padding-left: 23px;"> Dashboard</a></li> 
 
         </ul>
       </nav>
     </div>
 <div class="Virals">
 
-  <img src="/static/images/img1.png" style="height:90px ;width: 190; border: solid 100px blanchedalmond;">
+  <img src="/static/images/snow-remove.png" style="height:290px ;width: 290px;">
 </div>
 
     <div class="card" style="width: 34rem;margin:0 auto;margin-left: 350px;backdrop-filter:8px;background: rgba(255, 255, 255, 0.2);float:none;margin-bottom: -150px;"> 
@@ -31,10 +33,7 @@
         <form method="post">
           {% csrf_token %}
     <div class="form-row">
-      <!-- <h1>Form</h1> -->
-      <!-- <form method="post">
-          {% csrf_token %} -->
-
+   
           <div class="row gy-2 gx-3 align-items-center" style="margin: auto;float: none;margin-left: 8.2px;">
    <div class="col ">
       <label for="firstname" style="color: white;" >Patient Name</label>

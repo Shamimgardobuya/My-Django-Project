@@ -9,17 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
+ 
+
+    <table  class="table table-hover table-dark" >
         <th>
-     <td>Patient Name</td>
-     <td>Visit date</td>
-     <td>Health status</td>
+     <td style="border: solid 1px black;width:20rem; height: 3rem;">First Name</td>
+     <td style="border: solid 1px black;width:20rem; height: 3rem;">Visit date</td>
+     <td  style="border: solid 1px black;width:20rem; height: 3rem;">Health status</td>
             
         </th>
         <tbody>
 
            <tr>{% for visit in visits%}</tr> 
-        <td>{{visit.patient_name}}</td>
+        <td>{{visit.first_name}}</td>
+        <td>{{vist.last_name}}</td>
         <td>{{visit.visit_Date}}</td>  
         <td>{{visit.general_health}}</td>
 

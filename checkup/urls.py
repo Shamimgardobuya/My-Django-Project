@@ -1,16 +1,18 @@
 from unicodedata import name
 from django.urls import path
 # from .views import home_page
-from . import views
+from .views import SearchPatient,home_page,registering_patient,registerVitals,visit_register,visit,patient_dashboard,pivot_data
 # from .views import *
 
 urlpatterns=[
-    path('',views.home_page,name='home_page'),
-    path('register/',views.registering_patient,name='register_patient'),
-    path('vital/',views.registerVitals,name='vital_checkup') ,
-    path('visit/',views.visit_register,name='visitors'),
-    path('all/',views.all_patients,name='all'),
-    path("all_visits/",views.visit,name="all_visits"),
-    path('dash/', views.patient_dashboard, name='dashboard_with_pivot'),
-    path('data/',views.pivot_data, name='pivot_data'),
+    path('',home_page,name='home_page'),
+    path('register/',registering_patient,name='register_patient'),
+    path('vital/',registerVitals,name='vital_checkup') ,
+    path('visit/',visit_register,name='visitors'),
+    # path('all/',all_patients,name='all'),
+    path("all_visits/",visit,name="all_visits"),
+    path('dash/', patient_dashboard, name='dashboard'),
+    path('data/',pivot_data, name='pivot_data'),
+    path("all/",SearchPatient.as_view(),name='all'),
+
 ]

@@ -12,11 +12,11 @@ class Patient(models.Model):
     firstname=models.CharField(max_length=34)
     lastname=models.CharField(max_length=34)
     date_of_birth=models.DateField()
-    gender=(
+    gender2=(
         ('Male','Male'),
         ('Female','Female')
     )
-    gender=models.CharField(choices=gender,max_length=6,null=True)
+    gender=models.CharField(choices=gender2,max_length=6,null=True)
     age=models.SmallIntegerField()
     phone_number=PhoneNumberField(null=True)
     date_of_registeration=models.DateField()
@@ -36,12 +36,13 @@ class Vitals(models.Model):
         return self.patient_name
     # class Meta:
     #     proxy=True
-    @property
     def calc_bmi(self):
-        into_meter=100/self.height
-        bmi=(into_meter^2)/self.weight
-        # bmi=44
-        return bmi
+        print(self.patient_name)
+        # into_meter=100/self.height
+        # print(self.weight)
+        # bmi=self.weight/(into_meter * into_meter)
+        # # bmi=44
+        return self.patient_name
     
 class PatientVisit(models.Model):
     patient_name=models.ForeignKey(Patient,on_delete=models.CASCADE,null=True)
@@ -59,5 +60,5 @@ class PatientVisit(models.Model):
     comments=models.TextField()
     
     def __str__(self):
-        return self.patient_name
+        return str(self.patient_name)
 
