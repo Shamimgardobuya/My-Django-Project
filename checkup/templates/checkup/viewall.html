@@ -20,9 +20,9 @@
             <li><a href="{% url 'vital_checkup'%}" style="margin-right: 45px;color: white;text-decoration: none;">Checkup</a></li>
             <li><a href="{% url  'all'%}" style="color:#F8BF87;text-decoration: none;">All Patients</a></li>
             <li><a href="{% url 'dashboard'%}"  style="color:white;text-decoration: none;margin-right: -30px;padding-left: 23px;"> Dashboard</a></li> 
-            <form  action="{% url 'all'%}">{%csrf_token%}<input class="form-control mr-sm-2" type="search" placeholder="Search Patient" aria-label="Search" name="customer_found" style="width:13rem ;">
+            <!-- <form  action="{% url 'all'%}">{%csrf_token%}<input class="form-control mr-sm-2" type="search" placeholder="Search Patient" aria-label="Search" name="customer_found" style="width:13rem ;">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float:right;margin:0% -16% 0% 0%">Search</button>
-  </form>3
+  </form>3 -->
           </ul>
         </nav>
       </div>
@@ -46,8 +46,8 @@
                     </tr>
                         
                         <td style="border: 2px black ;background-color:white;height:15%;">{{patient.firstname}}</td>
-                        <td  style="border: 2px black ;background-color:white;height:15%;" >{{patient.lastname}}</td>
-                     <td style="border: 2px black ;background-color:white;height:15%;">{{patient.gender}}</td> 
+                        <td style="border: 2px black ;background-color:white;height:15%;" >{{patient.lastname}}</td>
+                        <td style="border: 2px black ;background-color:white;height:15%;">{{patient.gender}}</td> 
                         <td style="border: 2px black ;background-color:white;height:15%;">{{patient.age}}</td>       
 
                 {%endfor%}
