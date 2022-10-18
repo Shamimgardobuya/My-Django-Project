@@ -31,7 +31,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('herokusham))23')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','myhospital-remote.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','mycheckup-remote-api.herokuapp.com']
 
 
 # Application definition
