@@ -34,16 +34,11 @@ class Vitals(models.Model):
 
     def __str__(self):
         return self.patient_name
-    # class Meta:
-    #     proxy=True
-    def calc_bmi(self):
-        print(self.patient_name)
-        # into_meter=100/self.height
-        # print(self.weight)
-        # bmi=self.weight/(into_meter * into_meter)
-        # # bmi=44
-        return self.patient_name
     
+  
+     
+        
+
 class PatientVisit(models.Model):
     patient_name=models.ForeignKey(Patient,on_delete=models.CASCADE,null=True)
     visit_Date=models.DateTimeField(default=datetime.now)

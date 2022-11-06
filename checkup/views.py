@@ -10,6 +10,8 @@ from Users.user_registration import NewUserForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.forms import AuthenticationForm 
 
+
+
 from django.contrib import messages
 
 
@@ -38,8 +40,6 @@ def registering_patient(request):
   if request.method=='POST':
     form=forms.PatientRegistrationForm(request.POST)  #name of file #creating an acceptance of the whole form
     if form .is_valid():
-      form.save()
-      # data = ['Your registration is completed successfully.<br />', 'Name:', field, '<br />', 'Email:', field, '<br />', 'Username:', field]
       return redirect('home_page')
     else:
       print(form.errors)
@@ -119,23 +119,50 @@ def register(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	
 	form = NewUserForm()
-	return render (request=request, template_name="Users/register_user.html", context={"form":form})
+	return render (request=request, template_name="checkup/register_user.html", context={"form":form})
 
-# def loging_in(request):
-#     if request.method=="POST":
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#           login(request, user)
-#         else:
-#          messages.success(("There was an error loging you in,Try again"))
-#          return redirect('home')
-#     else:
-#         return render(request,"Users/loging_in.html",{
-            
-            
-#         })
+
+        
+def login_request(request):
+	if request.method == "POST":
+		form = AuthenticationForm(request,data=request.POST)
+		if form.is_valid():
+			username = form.cleaned_data.get('username')
+			password = form.cleaned_data.get('password')
+			user = authenticate(username=username, password=password)
+			# form.save()
+			if user is not None:
+				# user.save()
+				login(request, user)
+				messages.info(request, f"You are now logged in as {username}.")
+				return redirect("home_page")
+			else:
+				messages.error(request,"Invalid username or password.")
+		else:
+			messages.error(request,"Invalid username or password.")
+	form = AuthenticationForm()
+	return render(request=request, template_name="checkup/loging_in.html", context={"login_form":form})
+
+# @login()
+# def profile(request):
+#     return render (request,"Users/profile.html",{"users":user})
+
+
+
+def register(request):
+	if request.method == "POST":  #must check if post
+		form = NewUserForm(request.POST)      #instance of form
+		if form.is_valid():           #check if valid
+			user=form.save()          #save data
+			login(request,user)
+			messages.success(request, "Registration successful." )
+			return redirect("home_page")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	
+	form = NewUserForm()
+	return render (request=request, template_name="checkup/register_user.html", context={"form":form})
+
+
         
 def login_request(request):
 	if request.method == "POST":
@@ -153,10 +180,11 @@ def login_request(request):
 		else:
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
-	return render(request=request, template_name="Users/loging_in.html", context={"login_form":form})
+	return render(request=request, template_name="checkup/loging_in.html", context={"login_form":form})
 
 # @login()
 # def profile(request):
 #     return render (request,"Users/profile.html",{"users":user})
+
 
 

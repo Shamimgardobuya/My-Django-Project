@@ -21,17 +21,13 @@ class NewUserForm(UserCreationForm):
         # }
     def save(self, commit=True):
 
+            user = super(NewUserForm, self).save(commit=False)
+            user.email = self.cleaned_data['email']
 
-        user = super(NewUserForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        # user.username=self.changed_data['username']
-            # user.password1=self.password1['passworrd1']
-
-
-        if commit:
-            user.save()
+            if commit:
+                user.save()
             return user
-
+  
 # class LoginUserForm():
 #     email=forms.EmailField(required=True)
 
